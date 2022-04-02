@@ -19,6 +19,9 @@ public class App
         
         String menu = "\n\nChoose an oparation\n";
         menu += "1:squareRoot\n";
+        menu += "2:power\n";
+        menu += "3:logarithm\n";
+        menu += "4:factorial\n";
         menu += "0:Exit\n";
         
         int choice = -1;
@@ -46,6 +49,28 @@ public class App
                 n = calc.squareRoot(n);
                 System.out.println("result: " + String.valueOf(n));
             }
+            else if(choice == 2){
+
+                System.out.println("Enter the base:");
+                Double n = scanner.nextDouble();
+                System.out.println("Enter the exponent:");
+                Double e = scanner.nextDouble();
+                n = calc.power(n,e);
+                System.out.println("result: " + String.valueOf(n));
+            }
+            else if(choice == 3){
+
+                System.out.println("Enter the number:");
+                Double n = scanner.nextDouble();
+                n = calc.logarithm(n);
+                System.out.println("result: " + String.valueOf(n));
+            }
+            else if(choice == 4){
+                System.out.println("Enter the number:");
+                Double n = scanner.nextDouble();
+                n = calc.factorial(n);
+                System.out.println("result: " + String.valueOf(n));
+            }
             
             
         }
@@ -59,5 +84,32 @@ public class App
         double r = Math.sqrt(n);
         logger.info("[RESULT - SQUARE ROOT] - " + r);
         return r;
+    }
+
+    public double logarithm(double n){
+        logger.info("[LOGARITHM] - " + n);
+        double l = Math.log(n);
+        logger.info("[RESULT - LOGARITHM] - " + l);
+        return l;
+    }
+
+    public double power(double n, double e){
+        logger.info("[POWER] - " + n + " " + e);
+        double p = Math.pow(n, e);
+        logger.info("[RESULT - POWER] - " + p);
+        return p;
+    }
+
+    public double factorial(double n){
+        logger.info("[FACTORIAL] - " + n);
+        
+        double f = 1;
+
+        for(int i = 2; i <= n; i++){
+            f *= i;
+        }
+
+        logger.info("[RESULT - LOGARITHM] - " + f);
+        return f;
     }
 }
