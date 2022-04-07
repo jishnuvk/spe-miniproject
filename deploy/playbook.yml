@@ -1,0 +1,16 @@
+---
+
+- name: Docker pull and deploy
+  hosts: all
+  tasks: 
+    - name: Pull image from docker hub
+      community.docker.docker_image:
+        name: jishnuvk/spe-miniproject
+        source: pull
+    
+    - name: Deploy image to container
+      community.docker.docker_container:
+        name: calculator
+        image: jishnuvk/spe-miniproject
+        interactive: yes
+    
