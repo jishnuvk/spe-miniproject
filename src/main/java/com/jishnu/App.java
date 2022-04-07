@@ -80,28 +80,27 @@ public class App
     }
 
     public double squareRoot(double n){
-        logger.info("[SQUARE ROOT] - " + n);
         double r = Math.sqrt(n);
-        logger.info("[RESULT - SQUARE ROOT] - " + r);
+        logger.info("SQUARE ROOT - Input:" + n + " - Result:" + r);
         return r;
     }
 
     public double logarithm(double n){
-        logger.info("[LOGARITHM] - " + n);
+        
         double l = Math.log(n);
-        logger.info("[RESULT - LOGARITHM] - " + l);
+        logger.info("LOGARITHM - Input:" + n + " - Result:" + l);
         return l;
     }
 
     public double power(double n, double e){
-        logger.info("[POWER] - " + n + " " + e);
+        
         double p = Math.pow(n, e);
-        logger.info("[RESULT - POWER] - " + p);
+        logger.info("POWER - Input:" + n + "," + e + " - Result:" + p);
         return p;
     }
 
     public double factorial(double n){
-        logger.info("[FACTORIAL] - " + n);
+        
         
         double f = 1;
 
@@ -109,7 +108,7 @@ public class App
             f *= i;
         }
 
-        logger.info("[RESULT - LOGARITHM] - " + f);
+        logger.info("FACTORIAL - Input:" + n + " - Result:" + f);
         return f;
     }
 }
